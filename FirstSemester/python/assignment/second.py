@@ -1,10 +1,11 @@
 s1 = input("Enter String : ")
 s2 = input("Enter String : ")
+s3 = s1+s2
 
 def reverse():
     str1 = ""
     str2 = ""
-    for i in s1:
+    for i in s3:
         str1 = i + str1
     return str1
     

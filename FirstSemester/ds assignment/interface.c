@@ -29,7 +29,7 @@ void main()
     while (1) {
       int ch;
       printf("\n************************************************\n");
-      printf("\n1-Bubble Sort \n2-Selection Sort \n3-Insertion Sort \n4-Merge Sort \n5-Quick Sort \n6-Exit\n");
+      printf("\n1-Bubble Sort \n2-Selection Sort \n3-Insertion Sort \n4-Merge Sort \n5-Quick Sort \n6-Heap Sort \n7-Exit\n");
       printf("\n************************************************\n");
       printf("Enter your choice\n");
       scanf("%d",&ch);
@@ -60,6 +60,20 @@ void main()
         printf("%d ", arr[i]);
         printf("\n************************************************\n");
         break;
+        case 5:
+        printf("\n************* Quick sort *************\n");
+        quicksort(arr, 0, limit - 1);
+        for (i=0; i < limit; i++)
+        printf("%d ", arr[i]);
+        printf("\n************************************************\n");
+        break;
+        case 6:
+        printf("\n************* Heap sort *************\n");
+        break;
+        case 7:
+        exit(0);
+
+
 
       }
 

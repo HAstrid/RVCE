@@ -70,7 +70,7 @@ void InsertionSort(int arr[], int size)
 			hole--;
 		}
 		arr[hole] = value ;
-	}    
+	}
     printf("\nSorted Array using Insertion sort: \n");
     for(int i = 0; i < size; i++)
     {
@@ -151,5 +151,40 @@ void mergeSort(int arr[], int l, int r)
         mergeSort(arr, m+1, r);
 
         merge(arr, l, m, r);
+    }
+}
+
+// quick sort
+
+void quicksort(int list[], int low, int high)
+{
+    int pivot, i, j, temp;
+    if (low < high)
+    {
+        pivot = low;
+        i = low;
+        j = high;
+        while (i < j)
+        {
+            while (list[i] <= list[pivot] && i <= high)
+            {
+                i++;
+            }
+            while (list[j] > list[pivot] && j >= low)
+            {
+                j--;
+            }
+            if (i < j)
+            {
+                temp = list[i];
+                list[i] = list[j];
+                list[j] = temp;
+            }
+        }
+        temp = list[j];
+        list[j] = list[pivot];
+        list[pivot] = temp;
+        quicksort(list, low, j - 1);
+        quicksort(list, j + 1, high);
     }
 }
