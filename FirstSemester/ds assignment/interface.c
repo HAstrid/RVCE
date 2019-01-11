@@ -8,7 +8,12 @@ void main(int argc, char const *argv[])
   int arr[MAX], i, step, temp;
   // atoi() is used to convert string to integer
   int limit = atoi(argv[1]);
-  
+
+  if (argc > 2)
+  {
+    printf("No more arguments. Only two argument is allowed.\n");
+    exit(1);
+  }
 
   // ask user for number of elements to be sorted
   printf("\n************************************************\n");
@@ -34,7 +39,7 @@ void main(int argc, char const *argv[])
     while (1) {
       int ch;
       printf("\n************************************************\n");
-      printf("\n1-Bubble Sort \n2-Selection Sort \n3-Insertion Sort \n4-Merge Sort \n5-Quick Sort \n6-Heap Sort \n7-Exit\n");
+      printf("\n1-Bubble Sort \n2-Selection Sort \n3-Insertion Sort \n4-Merge Sort \n5-Quick Sort \n6-Exit\n");
       printf("\n************************************************\n");
       printf("Enter your choice\n");
       scanf("%d",&ch);
@@ -72,10 +77,10 @@ void main(int argc, char const *argv[])
         printf("%d ", arr[i]);
         printf("\n************************************************\n");
         break;
+        // case 6:
+        // printf("\n************* Heap sort *************\n");
+        // break;
         case 6:
-        printf("\n************* Heap sort *************\n");
-        break;
-        case 7:
         exit(0);
 
 
