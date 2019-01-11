@@ -6,19 +6,20 @@
 void main(int argc, char const *argv[])
 {
   int arr[MAX], i, step, temp;
-  // atoi() is used to convert string/char to integer
+  // atoi() is used to convert string to integer
   int limit = atoi(argv[1]);
   
-    // ask user for number of elements to be sorted
-    printf("\n************************************************\n");
-    printf("Enter the number of elements to be sorted: ");
-    //scanf("%d", &limit);
-    printf("\n************************************************\n");
-      // input elements if the array
-    for(i = 0; i < limit; i++)
-    {
-      printf("Element %d is %d \n", i+1,arr[i] = rand() % 100 + 1);
-      //arr[i] = rand() % 100 + 1;
+
+  // ask user for number of elements to be sorted
+  printf("\n************************************************\n");
+  printf("Enter the number of elements to be sorted: ");
+  //scanf("%d", &limit);
+  printf("\n************************************************\n");
+  // input elements if the array
+  for (i = 0; i < limit; i++)
+  {
+    printf("Element %d is %d \n", i + 1, arr[i] = rand() % 100 + 1);
+    //arr[i] = rand() % 100 + 1;
     }
     printf("\n************************************************\n");
     printf("Array elements are :- \n");
