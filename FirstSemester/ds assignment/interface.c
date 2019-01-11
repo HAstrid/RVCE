@@ -1,6 +1,7 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include"sort.h"
-#define MAX 20
+#define MAX 100
 
 void main()
 {
@@ -13,8 +14,8 @@ void main()
     // input elements if the array
     for(i = 0; i < limit; i++)
     {
-        printf("Enter element no. %d: ", i+1);
-        scanf("%d", &arr[i]);
+      printf("Element %d is %d \n", i+1,arr[i] = rand() % 100 + 1);
+      //arr[i] = rand() % 100 + 1;
     }
     printf("\n************************************************\n");
     printf("Array elements are :- \n");
