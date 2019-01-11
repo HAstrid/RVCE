@@ -3,15 +3,18 @@
 #include"sort.h"
 #define MAX 100
 
-void main()
+void main(int argc, char const *argv[])
 {
-  int arr[MAX], i, limit, step, temp;
+  int arr[MAX], i, step, temp;
+  // atoi() is used to convert string/char to integer
+  int limit = atoi(argv[1]);
+  
     // ask user for number of elements to be sorted
     printf("\n************************************************\n");
     printf("Enter the number of elements to be sorted: ");
-    scanf("%d", &limit);
+    //scanf("%d", &limit);
     printf("\n************************************************\n");
-    // input elements if the array
+      // input elements if the array
     for(i = 0; i < limit; i++)
     {
       printf("Element %d is %d \n", i+1,arr[i] = rand() % 100 + 1);
