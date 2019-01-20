@@ -13,6 +13,7 @@ int main(){
     printf("\nEnter the adjacency matrix \n");
     for (i = 1; i <= size; i++)
     {
+        visited[i]=0;
         for (j = 1; j <= size; j++)
         {
             scanf("%d", &ar[i][j]);
