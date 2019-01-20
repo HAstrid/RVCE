@@ -19,9 +19,7 @@ void main()
 {
     int choice;
     int key;
-
-    root = NULL;
-    
+  
     printf("\nProgram For Binary Search Tree ");
     while(1)
     {
@@ -58,6 +56,9 @@ void main()
             postorder(root);
             break;
         case 5:
+            display_tree(root);
+            break;
+        case 6:
             exit (0);
            
         }
@@ -92,6 +93,22 @@ void insert(node *root, node *new_node)
     }
 }
 
+void display_tree(node *temp)
+{
+    if (temp == NULL)
+        return;
+    /* display node data */
+    printf("%d", temp->data);
+    if (temp->left != NULL)
+        printf("(L->%d)", temp->left->data);
+    if (temp->right != NULL)
+        printf("(R->%d)", temp->right->data);
+    printf("\n");
+
+    display_tree(temp->left);
+    display_tree(temp->right);
+}
+
 void inorder(node *temp)
 {
     if (temp != NULL)
@@ -104,6 +121,7 @@ void inorder(node *temp)
 
 void preorder(node *temp)
 {
+
     if (temp != NULL)
     {
         printf(" %d --->", temp->data);

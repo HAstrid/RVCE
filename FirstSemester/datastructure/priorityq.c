@@ -98,7 +98,7 @@ int Delete()
 	if(r1==-1 ||f1>r1)
 	{
 	printf("Queue 1 is empty\n");
-	f1=0,r1=-1;
+	//f1=0,r1=-1;
 	}
 	else
 	{
@@ -109,7 +109,7 @@ int Delete()
 	 if(r2==-1 ||f2>r2)
         {
         printf("Queue 2 is empty\n");
-        f2=0,r2=-1;
+       // f2=0,r2=-1;
         }
         else
         {
@@ -120,7 +120,7 @@ int Delete()
 	 if(r3==-1 ||f3>r3)
         {
         printf("Queue 3 is empty\n");
-        f3=0,r3=-1;
+       // f3=0,r3=-1;
         }
         else
         {

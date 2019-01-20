@@ -32,23 +32,23 @@ void main()
         }
         printf("\n");
     }
-    
+    while(1){
     printf("\nEnter the starting node for Depth First search\n");
-    scanf("%d", &v);
+    scanf("%d", &v);  // source element
     for (i = 1; i <= n; i++)
-        visited[i] = false;
+        visited[i] = false;  
     dfs(v);
-    
+    }    
  
 }
 void dfs(int v)
 {
     int i, stack[10], top = -1, pop;
-    top++;
-    stack[top] = v;
+    // insert into stack //push
+    stack[++top] = v; //push to stack
     while (top >= 0)
     {
-        pop = stack[top];
+        pop = stack[top]; //top of stack
         top--;
         if (visited[pop] == false)
         {
@@ -59,7 +59,7 @@ void dfs(int v)
             continue;
         for (i = n; i >= 1; i--)
         {
-            if (a[pop][i] == 1&& visited[i] == false)
+            if (a[pop][i] == 1 && visited[i] == false)
             {
                 top++; // push all the unvisited neighbours in the stack
                 stack[top] = i;
