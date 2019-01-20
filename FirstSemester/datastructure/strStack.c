@@ -10,7 +10,7 @@ int push(char data[80])
     if (top == size - 1)
         printf("\nStack is full\n");
     else
-    {
+    {   
         top = top + 1;
         strcpy(stack[top], data);
         printf("\nPushed String is : %s\n",data);
