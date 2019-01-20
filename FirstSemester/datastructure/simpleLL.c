@@ -61,7 +61,7 @@ void display(){
       temp= temp->next;
    }
  }
-  // printf("%d\n", temp->data);
+   printf("%d\n", temp->data);
 }
 
  void delBeg(){
@@ -115,6 +115,7 @@ void display(){
     printf("%d deleted from end successfully.\n", n);
  }
 
+
  void insAtPos(int data, int position){
    struct node *ptr = (struct node*)malloc(sizeof(struct node));
     	//Creating a new node
@@ -128,7 +129,7 @@ void display(){
     	if(position==1)
     {
         //Executed only if position is 1
-        		//If position is 1, it is a special case because we need to nodify the head  pointer
+        		//If position is 1, it is a special case because we need to modify the head  pointer
         		ptr->next=temp;
         		//ptr->next=head is also valid;
 
@@ -151,10 +152,6 @@ void display(){
     	temp->next=ptr;
     	//Making pointer temp point to newly created node in the linked list
  }
-
-
-
-
 
 
 void main(){
