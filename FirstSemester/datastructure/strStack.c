@@ -29,6 +29,14 @@ int pop(char data[80])
     }
 }
 
+void peek(){
+    if (top == -1)
+        printf("\nStack is underflow\n");
+    else {
+        printf("\nPeek string is : %s  \n",stack[top]);
+    }
+}
+
 void display(){
     if (top == -1)
         printf("\nStack is underflow\n");
@@ -52,8 +60,9 @@ int main()
         printf("\n----------------------------\n");
         printf("      1. PUSH\n");
         printf("      2. POP\n");
-        printf("      3. DISPLAY\n");
-        printf("      4. EXIT\n");
+        printf("      3. PEEK\n");
+        printf("      4. DISPLAY\n");
+        printf("      5. EXIT\n");
         printf("----------------------------\n");
         printf("\nChoose operation : ");
         scanf("%d", &ch);
@@ -68,9 +77,12 @@ int main()
             pop(nm);
             break;
         case 3:
-            display();
+            peek();
             break;
         case 4:
+            display();
+            break;
+        case 5:
             exit(0);
         default:
             printf("\nInvalid operation \n");
