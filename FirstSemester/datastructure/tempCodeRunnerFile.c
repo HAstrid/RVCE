@@ -1,7 +1,8 @@
-if (visited[pop] == false)
-        // {
-        //     printf("%d-->", pop);
-        //     visited[pop] = true;
-        // }
-        // else
-        //     continue;
+if (start->next == NULL)
+    {
+        n = start->data;
+        free(start);
+        start = NULL;
+        printf("deleted %d", n);
+        return;
+    }

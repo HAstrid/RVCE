@@ -1,9 +1,12 @@
 #include<stdio.h>
-#define MAX 20
+#include<stdlib.h>
+#define MAX 100
 
-void bubbleSort(int arr[], int size);
-void SelectionSort(int arr[], int size);
-void InsertionSort(int arr[], int size);
+int size;
+
+void bubbleSort(int arr[]);
+void SelectionSort(int arr[]);
+void InsertionSort(int arr[]);
 
 void swap(int *xp, int *yp)
 {
@@ -12,7 +15,7 @@ void swap(int *xp, int *yp)
     *yp = temp;
 }
 
-void print(int arr[], int size)
+void print(int arr[])
 {
     printf("\nSorted Array : \n");
     for (int i = 0; i < size; i++)
@@ -26,17 +29,16 @@ void main()
 
     int arr[MAX], i, limit, step, temp;
     printf("Enter the limit of array ");
-    scanf("%d", &limit);
+    scanf("%d", &size);
 
     printf("Enter array element \n");
-    for (i = 0; i < limit; i++)
+    for (i = 0; i < size; i++)
     {
-        printf("Enter element no. %d: ", i + 1);
-        scanf("%d", &arr[i]);
+        printf("Element %d is %d \n", i + 1, arr[i] = rand() % 100 + 1);
     }
 
     printf("Array elements are :- \n");
-    for (i = 0; i < limit; i++)
+    for (i = 0; i < size; i++)
     {
         printf("\t%d", arr[i]);
     }
@@ -51,21 +53,21 @@ void main()
         switch (ch)
         {
         case 1:
-            bubbleSort(arr, limit);
+            bubbleSort(arr);
             break;
         case 2:
-            SelectionSort(arr, limit);
+            SelectionSort(arr);
             break;
         case 3:
-            InsertionSort(arr, limit);
+            InsertionSort(arr);
             break;
     }
 }
 }
 
-void bubbleSort(int arr[], int size)
+void bubbleSort(int arr[])
 {
-    int i, j, temp;
+    int i, j;
     for (i = 0; i < size; i++)
     {
         for (j = 0; j < size - i - 1; j++)
@@ -78,10 +80,10 @@ void bubbleSort(int arr[], int size)
         }
     }
     // print the sorted array
-    print(arr,size);
+    print(arr);
 }
 
-void SelectionSort(int arr[], int size)
+void SelectionSort(int arr[])
 {
     int i;
     for (i = 0; i < size - 1; i++)
@@ -94,10 +96,10 @@ void SelectionSort(int arr[], int size)
          }
          swap(&arr[Imin], &arr[i]);
     }
-    print(arr,size);
+    print(arr);
 }
 
-void InsertionSort(int arr[], int size)
+void InsertionSort(int arr[])
 {
     int i, hole, value;
     for (i = 1; i < size; i++)
@@ -111,7 +113,7 @@ void InsertionSort(int arr[], int size)
         }
         arr[hole] = value;
     }
-    print(arr,size);
+    print(arr);
    
 }
 

@@ -183,33 +183,52 @@ void delete_beg()
  
 void delete_end()
 {
+    struct node *t,*q;
+    int n;
     if(start==NULL)
     {
         printf("The list is empty!!");
+        return;
+
     }
-    else
-    {
-        q=start;
-        while(q->next->next!=NULL)
-        q=q->next;
- 
-        t=q->next;
-        q->next=NULL;
-        printf("Deleted element is %d",t->data);
-        free(t);
+    if(start->next==NULL){
+        n=start->data;
+        free(start);
+        start=NULL;
+        printf("%d",n);
+        return;
     }
+    t=start;
+    while(t->next!=NULL){
+        q=t;
+        t=t->next;
+    }
+    n=t->data;
+    q->next=NULL;
+    free(t);
+    printf("%d",n);
+
+    
 }
  
 int delete_pos()
 {
-    int pos,i;
+    int pos,i,n;
  
     if(start==NULL)
     {
         printf("List is empty!!");
         return 0;
     }
- 
+    if (start->next == NULL)
+    {
+        n = start->data;
+        free(start);
+        start = NULL;
+        printf("deleted %d", n);
+        return;
+    
+
     printf("Enter position to delete:");
     scanf("%d",&pos);
  

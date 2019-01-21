@@ -58,13 +58,6 @@ void insert_at_begin(int x) {
    t = (struct node*)malloc(sizeof(struct node));
    count++;
 
-   if (start == NULL) {
-      start = t;
-      start->data = x;
-      start->next = NULL;
-      return;
-   }
-
    t->data = x;
    t->next = start;
    start = t;
@@ -125,7 +118,7 @@ void delete_from_begin() {
    t = start->next;
    free(start);
    start = t;
-   count--;
+  // count--;
 
    printf("%d deleted from beginning successfully.\n", n);
 }
@@ -139,8 +132,7 @@ void delete_from_end() {
       return;
    }
 
-   count--;
-
+   //count--;
    if (start->next == NULL) {
       n = start->data;
       free(start);
