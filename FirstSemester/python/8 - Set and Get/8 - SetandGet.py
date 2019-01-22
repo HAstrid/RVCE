@@ -12,6 +12,8 @@ class Employee(object):
            
     #Magic method - getattr to get the attribute for the class
     def __getattr__(self, name):
+         if not(name=="empno" or name=="empname" or name=="designation" or name=="empstatus"):
+                return self.__dict__[name]
         # we don't need a special call to super here because getattr is only
         # called when an attribute is NOT found in the instance's dictionary
         try:
@@ -27,12 +29,22 @@ print("Enter the number of attributes for the Employee class")
 print("attributes should be same as in list - empno,empname,designation,empstatus")
 lp = True
 while(lp):
-    a = input("enter the attribute name:")
-    v = input("enter the attribute value:")
-    valuestatus=setattr(e, a, v)
-    if(valuestatus==0):
-        print("attribute not added")
-    if input("do u want to continue:y/n - ")=='n':
-        break
-print("List of attributes are added")
-print(e.__dict__)
+    print("1.Set attribute")
+    print("2.Get attribute")
+    print("3.Display")
+    print("4.Exit")
+    ch=int(input("Enter the choice"))
+    if ch==1:
+      a = input("enter the attribute name:")
+      v = input("enter the attribute value:")
+      valuestatus=setattr(e, a, v)
+      if(valuestatus==0):
+         print("attribute not added")
+    elif ch==2:
+      a=input("ENter attribute name")
+      v=e.__getattr__(a)
+      print(v)
+    elif ch==3:
+      print(e.__dict__) #check if it is print() or just e.__dict__
+    else:
+      break
